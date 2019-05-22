@@ -66,7 +66,7 @@ def handle_dialog(req, res):
     if req['session']['new']:
         t = [0]
         user_id_lib[user_id] = t
-        res['response']['text'] = 'Привет! Ты первый раз, тебе надо добавить данные, введи твоё имя'
+        res['response']['text'] = 'Привет! Ты первый раз, тебе надо добавить данные, введи cвоё имя'
         return
 
     if req['request']['command'] and user_id_lib[user_id][0] == 0:
@@ -171,7 +171,7 @@ def handle_dialog(req, res):
         sesaian_id[req['session']['session_id']][1] = ft2[0]
         st = st + '. Это будет стоить ' + ft2[0]
         st = st + ' рублей.'
-        st = st + '              Хотите купить другую нашу продукцию?'
+        st = st + '              Хотите купить нашу другую продукцию?'
         res['response']['text'] = st
         res['response']['buttons'] = [{'title': suggest, 'hide': True} for suggest in ['да', 'нет']]
         user_id_lib[user_id][4] = 3
